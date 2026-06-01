@@ -37,10 +37,11 @@ contract Calculadora {
      * @param _num1 First number to add.
      * @param _num2 Second number to add.
      */
-    function add(int256 _num1, int256 _num2) external returns(int256) {
-        s_resultado = _num1 + _num2;
+    function add(int256 _num1, int256 _num2) external returns(int256 _resultado) {
+        _resultado = _num1 + _num2;
+        s_resultado = _resultado;
+
         emit Add(_num1, _num2, s_resultado);
-        return s_resultado;
     }
 
     /**
@@ -48,10 +49,10 @@ contract Calculadora {
      * @param _num1 First number to substract
      * @param _num2 Second number to substract
      */
-    function substraction(int256 _num1, int256 _num2) external returns(int256) {
-        s_resultado = _num1 - _num2;
+    function substraction(int256 _num1, int256 _num2) external returns(int256 _resultado) {
+        _resultado = _num1 - _num2;
+        s_resultado = _resultado;
         emit Substract(_num1, _num2, s_resultado);
-        return s_resultado;
     }
 
     /**
@@ -59,10 +60,10 @@ contract Calculadora {
      * @param _num1 First number to multiply
      * @param _num2 Second number to multiply
      */
-    function multiplication(int256 _num1, int256 _num2) external returns(int256) {
-        s_resultado = _num1 * _num2;
+    function multiplication(int256 _num1, int256 _num2) external returns(int256 _resultado) {
+        _resultado = _num1 * _num2;
+        s_resultado = _resultado;
         emit Multiply(_num1, _num2, s_resultado);
-        return s_resultado;
     }
 
     /**
@@ -70,10 +71,11 @@ contract Calculadora {
      * @param _num1 Dividend
      * @param _num2 Divisor
      */
-    function division(int256 _num1, int256 _num2) external checkZero(_num2) returns(int256) {
-        s_resultado = _num1 / _num2;
+    function division(int256 _num1, int256 _num2) external checkZero(_num2) returns(int256 _resultado) {
+        _resultado = _num1 / _num2;
+
+        s_resultado = _resultado;
         emit Divide(_num1, _num2, s_resultado);
-        return s_resultado;
     }
 
     // private functions
