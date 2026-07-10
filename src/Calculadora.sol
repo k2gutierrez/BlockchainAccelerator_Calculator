@@ -1,6 +1,11 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.30;
 
+/**
+ * @title Calculadora
+ * @author Carlos Gutiérrez
+ * @notice Math functions
+ */
 contract Calculadora {
     // Custom errors
     error Calculadora__CannotDivideZeroValue();
